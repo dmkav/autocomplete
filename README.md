@@ -3,7 +3,7 @@
 ## Launching
 
 To launch this project copy entity of dist folder to your ftp server. Or just visit link below:
-http://www.dmitryikavraiskyi.com/angular/autocomplete/autocomplete
+http://www.dmitryikavraiskyi.com/angular/autocomplete
 
 Or copy all project to your local machine. Install all dependencies with console command `npm install` and launch development server with command `ng serve`.
 

@@ -10,7 +10,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private router: Router) { }
   visitAutocomplete(): void {
-    this.router.navigate(['/autocomplete']);
+    this.router.navigate(['/autocomplete']).catch(error => console.log(error));
   }
   ngOnInit() {
   }

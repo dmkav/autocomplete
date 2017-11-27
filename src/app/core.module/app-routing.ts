@@ -1,8 +1,8 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {AutocompleteComponent} from '../autocomplete/autocomplete.component';
-import {HomeComponent} from '../home/home.component';
-import {ContactsComponent} from '../contacts/contacts.component';
+import {AutocompleteComponent} from '../components/autocomplete/autocomplete.component';
+import {HomeComponent} from '../components/home/home.component';
+import {ContactsComponent} from '../components/contacts/contacts.component';
 
 
 const routes: Routes = [

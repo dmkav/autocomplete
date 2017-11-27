@@ -1,16 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AutocompleteComponent } from '../autocomplete/autocomplete.component';
-import { ContactsComponent } from '../contacts/contacts.component';
-import { HeaderComponent } from '../header/header.component';
-import { HomeComponent } from '../home/home.component';
+import {FormsModule} from '@angular/forms';
+import { AutocompleteComponent } from '../components/autocomplete/autocomplete.component';
+import { ContactsComponent } from '../components/contacts/contacts.component';
+import { HeaderComponent } from '../components/header/header.component';
+import { HomeComponent } from '../components/home/home.component';
 import { AppRoutingModule } from './app-routing';
 import { DataService } from '../services/data.service';
 import {HttpModule} from '@angular/http';
-import { MatchedTextPipe } from '../pipe/matched-text.pipe';
-import {FormsModule} from "@angular/forms";
-
-
+import { MatchedTextPipe } from '../pipes/matched-text.pipe';
 
 @NgModule({
   imports: [

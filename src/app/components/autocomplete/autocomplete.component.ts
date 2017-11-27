@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {DataService} from '../services/data.service';
+import {DataService} from '../../services/data.service';
 import {Subject} from 'rxjs/Subject';
 import {debounceTime, distinctUntilChanged, switchMap} from 'rxjs/operators';
 import {Observable} from 'rxjs/Observable';
-import {Item} from '../models/Item';
+import {Item} from '../../models/Item';
 
 @Component({
   selector: 'app-autocomplete',

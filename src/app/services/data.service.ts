@@ -10,9 +10,12 @@ export class DataService {
   private url = './assets/api/data.json';
   constructor(private http: Http) { }
 
+  /* Get all Items */
   getData(): Observable<Item[]> {
     return this.http.get(this.url).map(data => data.json().data as Item[]);
   }
+
+  /* Get Filtered Items according Search term */
   getFilteredData(val: string | number): Observable<Item[]> {
     return this.getData().map(items => {
       return items.filter(item => {
@@ -24,6 +27,8 @@ export class DataService {
       });
     });
   }
+
+  /* Get Matched Data into dropdown select according Search term */
   getMatchedData(val: string): Observable<Item[]> {
     if (val.trim()) {
       val = val.toLowerCase();

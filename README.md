@@ -1,5 +1,15 @@
 # Autocomplete
 
+## Launching
+
+To launch this project copy entity of dist folder to your ftp server. Or just visit link below:
+http://www.dmitryikavraiskyi.com/angular/autocomplete/autocomplete
+
+Or copy all project to your local machine. Install all dependincies with console command `npm install` and launch development server with command `ng serve`.
+
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.7.
 
 ## Development server

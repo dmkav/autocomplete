@@ -14,13 +14,13 @@
       <span class="input-group-btn">
         <button class="btn btn-secondary" type="button">Go!</button>
       </span>
-      <div class="result-list" *ngIf="showMatchedResult">
+      <div class="result-list" *ngIf="showMatchedResult && matchedItems?.length > 0">
         <ul class="list-group">
           <li
             class="list-group-item" [class.active]="i === activeIndex"
-            *ngFor="let item of matchedItems | async | slice:0:5; let i = index"
+            *ngFor="let item of matchedItems | slice:0:5; let i = index"
             innerHTML="{{item.name | matchedText:search.value}}"
-            (click)="selectSearchSuggestion(item.name)"
+            (click)="selectSearchSuggestion(item.id, item.name)"
             (mouseenter)="suggestionHover(i)"
           >
           </li>

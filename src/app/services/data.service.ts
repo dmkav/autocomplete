@@ -13,7 +13,17 @@ export class DataService {
   getData(): Observable<Item[]> {
     return this.http.get(this.url).map(data => data.json().data as Item[]);
   }
-
+  getFilteredData(val: string | number): Observable<Item[]> {
+    return this.getData().map(items => {
+      return items.filter(item => {
+        if (Number(val)) {
+          return item.id === val;
+        } else {
+          return item.name.indexOf(<string>val) !== -1 || item.description.indexOf(<string>val) !== -1;
+        }
+      });
+    });
+  }
   getMatchedData(val: string): Observable<Item[]> {
     if (val.trim()) {
       val = val.toLowerCase();

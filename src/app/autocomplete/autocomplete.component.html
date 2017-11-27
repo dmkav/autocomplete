@@ -1,0 +1,44 @@
+<h1>Autocomplete</h1>
+
+<div class="row">
+  <div class="col-lg-6">
+    <div class="input-group" style="margin-bottom: 30px">
+      <input type="text"
+             class="form-control"
+             placeholder="Search for..."
+             #search
+             [(ngModel)]="searchText"
+             (blur)="hideMatchedResult()"
+             (keyup)="autocomplete($event, search.value)"
+      >
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button">Go!</button>
+      </span>
+      <div class="result-list" *ngIf="showMatchedResult">
+        <ul class="list-group">
+          <li
+            class="list-group-item" [class.active]="i === activeIndex"
+            *ngFor="let item of matchedItems | async | slice:0:5; let i = index"
+            innerHTML="{{item.name | matchedText:search.value}}"
+            (click)="selectSearchSuggestion(item.name)"
+            (mouseenter)="suggestionHover(i)"
+          >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-4" *ngFor="let item of items">
+    <div class="card" style="margin-bottom: 20px;">
+      <img class="card-img-top" src="{{item.photo}}" alt="Card image cap">
+      <div class="card-body">
+        <h4 class="card-title">{{item.name}}</h4>
+        <p class="card-text">{{item.description}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
